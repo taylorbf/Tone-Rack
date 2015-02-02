@@ -1,2 +1,2 @@
 # Tone-Rack
-GUI generator for Tone.js (brainstorm)
+GUI generator for Tone.js

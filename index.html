@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Tone Rack Demo</title>
+		<script src="js/nexusUI.js"></script>
+		<script src="js/Tone.js"></script>
+		<script src="js/rack.js"></script>
+	</head>
+	<body style="text-align:center;background-color:#eee">
+
+	<style>
+	</style>
+
+	<script>
+
+		var tonepiano = new Tone.Player("audio/pno7_short.mp3",function() {
+			tonepiano.toMaster();
+			rack(tonepiano,"player","tonepiano");
+		});
+
+		var toneblips = new Tone.Player("audio/fmblips.mp3",function() {
+			toneblips.toMaster();
+			rack(toneblips,"player","FMblips");
+		});
+
+		nx.onload = function() {
+			nx.colorize("#0AF");
+		}
+
+	</script>
+
+		
+	</body>
+</html>

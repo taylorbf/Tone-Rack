@@ -13,22 +13,28 @@
 
 	<script>
 
-		var tonepiano = new Tone.Player("audio/pno7_short.mp3",function() {
-			tonepiano.toMaster();
-			rack(tonepiano,"player","tonepiano");
-		});
+		var insts = []
 
-		var toneblips = new Tone.Player("audio/fmblips.mp3",function() {
-			toneblips.toMaster();
-			rack(toneblips,"player","FMblips");
-		});
+		for (var i=0;i<4;i++) {
+			insts[i] = new Tone.Player("audio/pno7_short.mp3", function() { });	
+			insts[i].toMaster()
+			rack(insts[i],"player","tonepiano")
+		}
+
+		for (var i=4;i<8;i++) {
+			insts[i] = new Tone.Player("audio/fmblips.mp3", function() { })
+			insts[i].toMaster()
+			rack(insts[i],"player","FMblips")
+		}
 
 		nx.onload = function() {
 			nx.colorize("#0AF");
+			ghost1.watch();
 		}
 
 	</script>
 
+		<canvas nx="ghost" style="position:absolute;bottom:0px;right:0px;"></canvas>
 		
 	</body>
 </html>
